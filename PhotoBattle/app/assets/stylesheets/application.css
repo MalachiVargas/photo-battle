@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+
+
+*{
+    box-sizing:border-box
+}
+/*--header start here */
+#title {
+    color: #cd5c5c;
+    padding-left: 50px;
+    font-size: x-large;
+    font-weight: bold;
+}
+#logo{
+    padding-left: 20px;
+}
+/*--header end here */
+
+/*--main container start here-- */
+.section{
+    display: flex;
+}
+#maincontainer{
+    width:100%;
+
+}
+.bodycontainer {
+    align-content: center;
+    padding: 50px 3px 50px 3px;
+}
+#start{
+    font-size: x-large;
+    text-align: center;
+    color:indianred;
+    align-content: center;
+    padding-right: 350px;
+    padding-left: 350px;
+    padding-top: 8px;
+}
+.btn-start-battle{
+    font-size: x-large;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    border-radius: 50%;
+    display: inline-block;
+    text-decoration: none;
+    color:indianred;
+    border:solid indianred;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    transition: .5s;
+}
+.btn-start-battle:hover{
+    transform: rotateX(360deg);
+    -ms-transform:rotateX(360deg);
+    -webkit-transform:rotateX(360deg);
+}
+/*--main container end here-- */
