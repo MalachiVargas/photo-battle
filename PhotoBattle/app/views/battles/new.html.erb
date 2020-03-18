@@ -1,22 +1,41 @@
-<html lang="en">
+<%= form_for :battle, url:battles_path(@battle), method: :get do |f| %>
+
+<main role="main">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+</main>
+
+  <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Photo Battle</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="welcome.css">
 </head>
 <body>
 <header  id ="header">
-    <a> <img alt="Photo Battle logo" src="img/logo.png" id ="logo"></a>
+    <a> <img alt="Photo Battle logo" src="/assets/logo.png" id ="logo"></a>
     <div id = "title" >Photo Battle</div>
 
 </header>
+
 <div class ="bodycontainer" id = maincontainer>
           <div id =start class = "starting">
-           <h1>Upload photos.</h1>
-           <h1>Invite friends.</h1>
-           <h1>Vote.</h1>
+           
               <a id = "start-btn" class ="btn-start-battle">Battle!</a>
+              
           </div>
 </div>
 </body>
 </html>
+<% end %>
+
