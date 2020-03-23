@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  battleID: 1
+  numPlayers: 1
+  votes0: 1
+  votes1: 1
+  votes2: 1
+  votes3: 1
+
+two:
+  battleID: 1
+  numPlayers: 1
+  votes0: 1
+  votes1: 1
+  votes2: 1
+  votes3: 1

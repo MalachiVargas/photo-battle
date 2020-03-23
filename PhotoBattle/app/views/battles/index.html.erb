@@ -1,0 +1,80 @@
+
+
+<%= form_for :battle, url:battles_path(@battle), method: :get do |f| %>
+
+
+  <html lang="en">
+<head>
+    <style>
+* {
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: #F0F0F0;
+    margin: 0;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 1em;
+    row-gap: 1em;
+}
+img {
+    display: block;
+    -webkit-box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+    -moz-box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+    box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+    width: 100%;
+    
+} </style>
+    <meta charset="UTF-8">
+    <title>Photo Battle</title>
+    <link rel="stylesheet" type="text/css" href="welcome.css">
+</head>
+
+<body>
+    <div class ="bodycontainer" id = maincontainer>
+          <div id =start class = "starting">
+           
+              <a href = '/battles/new', id = "start-btn" class ="btn-start-battle">Create New</a>
+          </div>
+</div>
+<header  id ="header">
+    
+    <div id = "title" >Photo Battle</div>
+
+</header>
+
+<div class ="bodycontainer" id = maincontainer>
+          <div id =start class = "starting">
+           
+          
+              
+          </div>
+              <main role="main">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+    <img src="/assets/Untitled.png" alt="empty box">
+</main>
+<div class ="bodycontainer" id = maincontainer>
+          <div id =start class = "starting">
+           
+              <a href = '/', id = "start-btn" class ="btn-start-battle">Go Back</a>
+          </div>
+</div>
+</div>
+</body>
+</html>
+<% end %>
+
