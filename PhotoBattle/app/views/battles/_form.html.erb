@@ -1,7 +1,5 @@
-
-<%= form_for @battle do |f| %>
- 
-  <% if @battle.errors.any? %>
+<%= form_for(@battle, :html => { :multipart => true }) do |f| %>
+   <% if @battle.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@battle.errors.count, "error") %> prohibited
@@ -14,14 +12,16 @@
       </ul>
     </div>
   <% end %>
- 
 
-  <p>
-    <%= f.file_field :picture %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+   <%= f.fields_for :battle_attachments do |p| %>
+     <div class="field">
+       <%= p.label :avatar %><br>
+       <%= p.file_field :avatar, :multiple => true, name: "battle_attachments[avatar][]" %>
+     </div>
+   <% end %>
+
+   <div class="actions">
+     <%= f.submit %>
+   </div>
 <% end %>
+

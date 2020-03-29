@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Battle Attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Battle</th>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @battle_attachments.each do |battle_attachment| %>
+      <tr>
+        <td><%= battle_attachment.battle_id %></td>
+        <td><%= battle_attachment.avatar %></td>
+        <td><%= link_to 'Show', battle_attachment %></td>
+        <td><%= link_to 'Edit', edit_battle_attachment_path(battle_attachment) %></td>
+        <td><%= link_to 'Destroy', battle_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Battle Attachment', new_battle_attachment_path %>

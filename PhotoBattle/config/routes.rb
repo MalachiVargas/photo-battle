@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :battle_attachments
   get 'welcome/index'
   
   root 'welcome#index'

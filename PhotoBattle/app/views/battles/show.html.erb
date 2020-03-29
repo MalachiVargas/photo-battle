@@ -1,4 +1,14 @@
-Name: <%= @battle.battleID %>
+<p id="notice"><%= notice %></p>
 
-Image: <%= image_tag @battle.picture.url %>
+<p>
+  <strong>Title:</strong>
+  placeholder
+</p>
 
+<% @battle_attachments.each do |p| %>
+  <%= image_tag p.avatar_url %>
+  <%= link_to "Edit Attachment", edit_battle_attachment_path(p) %>
+<% end %>
+
+<%= link_to 'Edit', edit_battle_path(@battle) %> |
+<%= link_to 'Back', battles_path %>

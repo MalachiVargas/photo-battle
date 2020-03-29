@@ -1,0 +1,2 @@
+module BattleAttachmentsHelper
+end
