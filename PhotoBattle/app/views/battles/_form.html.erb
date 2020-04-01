@@ -13,12 +13,12 @@
     </div>
   <% end %>
 
-   <%= f.fields_for :battle_attachments do |p| %>
-     <div class="field">
-       <%= p.label :avatar %><br>
-       <%= p.file_field :avatar, :multiple => true, name: "battle_attachments[avatar][]" %>
-     </div>
-   <% end %>
+
+
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+
+
 
    <div class="actions">
      <%= f.submit %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200329013444) do
+ActiveRecord::Schema.define(version: 20200401012155) do
 
   create_table "battle_attachments", force: :cascade do |t|
     t.integer "battle_id"
@@ -19,7 +19,17 @@ ActiveRecord::Schema.define(version: 20200329013444) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "battles" because of following StandardError
-#   Unknown type 'json' for column 'pictures'
+  create_table "battles", force: :cascade do |t|
+    t.integer "battleID"
+    t.integer "numPlayers"
+    t.integer "votes0"
+    t.integer "votes1"
+    t.integer "votes2"
+    t.integer "votes3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.string "pictures"
+  end
 
 end
