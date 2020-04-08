@@ -2,11 +2,27 @@
 
 <p>
   <strong>Title:</strong>
-  placeholder
+  Players:
 </p>
 
-<% @battle.pictures.each do |pic| %>
-    <tr>
-      <td><%= image_tag pic.url %></td>
-    </tr>
-<%end%>
+
+
+<style>img {
+    max-width: 20%;
+    max-height: 20%;
+}
+</style>
+<% (0...@battle.pictures.length).to_a.shuffle.each do |i| %>
+  <tr>
+    <td><%= image_tag @battle.pictures[i].url %></td>
+  </tr>
+<% end %>
+
+
+
+
+<% if @battle.pictures.length < 12 %>
+<%= link_to "join battle", edit_battle_path(@battle) %>
+<% else %>
+<%= link_to "start timer", battle_path() %>
+<% end %>

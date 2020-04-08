@@ -17,6 +17,7 @@ class BattlesController < ApplicationController
     end
     def create
         @battle = Battle.new(battle_params)
+        #@battle.user = current_user
         if @battle.save
             redirect_to @battle
         else
@@ -25,11 +26,14 @@ class BattlesController < ApplicationController
         #render plain: params[:article].inspect
     end 
     def update
-        
+        @battle = Battle.find(params[:id])
+        if @battle.update_attributes(battle_params)
+            redirect_to @battle
+        end
     end
 private
     def battle_params
-        params.require(:battle).permit({pictures: []})
+        params.require(:battle).permit( :picture, {pictures: []})
     end
 
 end

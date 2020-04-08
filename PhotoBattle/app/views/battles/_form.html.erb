@@ -12,12 +12,15 @@
       </ul>
     </div>
   <% end %>
+<!-- INPUT PLAYER NAME NOT PICTURE -->
 
 
 
-  <%= f.label :pictures %>
-  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
-
+<!-- input player's pics -->
+<% @battle.pictures.each do |picture| %>
+  <%= hidden_field :battle, :pictures, multiple: true, value: picture.identifier %>
+<% end %>
+<%= f.file_field :pictures, multiple: true %>
 
 
    <div class="actions">
