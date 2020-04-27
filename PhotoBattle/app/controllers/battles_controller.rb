@@ -1,6 +1,10 @@
 class BattlesController < ApplicationController
     def new
         @battle = Battle.new
+        @battle.update_attributes(votes0: 0)
+        @battle.update_attributes(votes1: 0)
+        @battle.update_attributes(votes2: 0)
+        @battle.update_attributes(votes3: 0)
     end
     def edit
         @battle = Battle.find(params[:id])
@@ -39,7 +43,6 @@ class BattlesController < ApplicationController
         else @battle.update_attributes(battle_params)
             redirect_to @battle
         end
-        redirect_to @battle
     end
     def result
         @battle = Battle.find(params[:id])
@@ -50,7 +53,7 @@ class BattlesController < ApplicationController
                 max = k
             end
         end
-        ret = arry.index(max)
+        ret = arry.index(max) + 1
         if @battle.update_attributes(battleID: ret)
             redirect_to @battle
         end

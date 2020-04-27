@@ -1,6 +1,6 @@
 <%= form_for(@battle) do |f| %>
 <div class="actions">
-     <%= f.submit %>
+     <%= f.submit "Submit Vote!"%>
    </div>
 <style>
 td, th {
@@ -42,13 +42,13 @@ img {
 </table>
     
 
-    <%= link_to "end battle", result_battle_path(@battle) %>
+    <%= link_to "End Battle", result_battle_path(@battle) %>
     <%= link_to "leave battle", battles_path %>
     
 
 
 
    <div class="actions">
-     <%= f.submit %>
+     <%= f.submit "Submit Vote!"%>
    </div>
 <% end %>
