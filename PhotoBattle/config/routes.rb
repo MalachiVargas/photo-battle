@@ -11,4 +11,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :battles
+  
+  
+
+  resources :battles do
+    member do
+        get :result
+    end
+  end
+
+  
+  #get 'vote', to: 'battles#vote', as: 'vote'
 end

@@ -4,25 +4,22 @@
   <strong>Title:</strong>
   Players:
 </p>
+<p>PLAYERS</p>
 
 
 
-<style>img {
-    max-width: 20%;
-    max-height: 20%;
-}
-</style>
-<% (0...@battle.pictures.length).to_a.shuffle.each do |i| %>
+<% for i in 1..@battle.pictures.length/3 do %>
   <tr>
-    <td><%= image_tag @battle.pictures[i].url %></td>
+    <th>Player<%=i%> Joined</th>
   </tr>
 <% end %>
 
 
 
-
 <% if @battle.pictures.length < 12 %>
-<%= link_to "join battle", edit_battle_path(@battle) %>
+<%= render 'form' %>
+<% elsif @battle.battleID == nil %>
+<%= render 'vote' %>
 <% else %>
-<%= link_to "start timer", battle_path() %>
+<%= render 'result' %>
 <% end %>

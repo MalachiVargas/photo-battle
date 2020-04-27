@@ -1,0 +1,54 @@
+<%= form_for(@battle) do |f| %>
+<div class="actions">
+     <%= f.submit %>
+   </div>
+<style>
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+img {
+    width: 100%;
+    display: block;
+    height: 30%;
+}
+
+</style>
+<table style = "border: 1px solid black">
+  
+  
+    <% (0...@battle.pictures.length).to_a.shuffle.each do |i| %>
+    <tr>
+      <th>
+      <%= image_tag @battle.pictures[i].url %>
+      </th>
+      
+      <td>
+        <% if i < 3 %>
+          <%= f.radio_button(:votes0,"1") %>  
+        <% elsif i < 6 %>
+          <%= f.radio_button(:votes1,"1") %>
+        <% elsif i < 9 %>
+          <%= f.radio_button(:votes2,"1") %>
+        <% else %>
+          <%= f.radio_button(:votes3,"1") %>
+        <% end %>
+      </td>
+    </tr>  
+    <% end %>
+  
+  
+</table>
+    
+
+    <%= link_to "end battle", result_battle_path(@battle) %>
+    <%= link_to "leave battle", battles_path %>
+    
+
+
+
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>

@@ -27,13 +27,37 @@ class BattlesController < ApplicationController
     end 
     def update
         @battle = Battle.find(params[:id])
-        if @battle.update_attributes(battle_params)
+        
+        if battle_params[:votes0]
+            @battle.update_attributes(votes0: (@battle.votes0 + 1))
+        elsif battle_params[:votes1]
+            @battle.update_attributes(votes1: (@battle.votes1 + 1))
+        elsif battle_params[:votes2]
+            @battle.update_attributes(votes2: (@battle.votes2 + 1))
+        elsif battle_params[:votes3]
+            @battle.update_attributes(votes3: (@battle.votes3 + 1))
+        else @battle.update_attributes(battle_params)
+            redirect_to @battle
+        end
+        redirect_to @battle
+    end
+    def result
+        @battle = Battle.find(params[:id])
+        arry = [@battle.votes0,@battle.votes1,@battle.votes2,@battle.votes3]
+        max = arry[0]
+        arry.each do |k|
+            if k > max
+                max = k
+            end
+        end
+        ret = arry.index(max)
+        if @battle.update_attributes(battleID: ret)
             redirect_to @battle
         end
     end
 private
     def battle_params
-        params.require(:battle).permit( :picture, {pictures: []})
+        params.require(:battle).permit( :picture, {pictures: []}, :votes0, :votes1, :votes2, :votes3)
     end
 
 end
