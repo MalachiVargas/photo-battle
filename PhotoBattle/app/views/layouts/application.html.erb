@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PhotoBattle</title>
-    <%= csrf_meta_tags %>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Battle</title>
+    <link rel="stylesheet" type="text/css" href="welcome.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
+<body>
+<header  id ="header">
+    <img alt="Photo Battle logo" src="/assets/logo.png" id ="logo">
+    <div id = "title" class="logo-title" >Photo Battle</div>
 
-  <body>
-    <%= yield %>
-  </body>
+</header>
+
+ <%= yield %>
+</body>
+
 </html>

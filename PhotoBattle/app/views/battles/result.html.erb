@@ -1,0 +1,19 @@
+
+<div class ="bodycontainer" id = maincontainer>
+    <h1>Results</h1>
+    <div class ="player_list">
+        <p id="title">Player 1 </p>
+        <p id="title"> Vote Count: <%= @battle.votes0 %> </p>
+        
+            <p id="title">Player 2 </p>
+        <p id="title"> Vote Count: <%= @battle.votes1 %> </p>
+        
+            <p id="title">Player 3 </p>
+        <p id="title"> Vote Count: <%= @battle.votes2 %> </p>
+        
+            <p id="title">Player 4 </p>
+        <p id="title"> Vote Count: <%= @battle.votes3 %> </p>
+
+    </div>
+      <%= link_to 'Edit Choice', battle_path(@battle), id:"title", class:"links" %>
+</div>

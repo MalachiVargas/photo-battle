@@ -27,7 +27,6 @@ class BattlesController < ApplicationController
         else
             render 'new'
         end
-        #render plain: params[:article].inspect
     end 
     def update
         @battle = Battle.find(params[:id])
@@ -46,17 +45,7 @@ class BattlesController < ApplicationController
     end
     def result
         @battle = Battle.find(params[:id])
-        arry = [@battle.votes0,@battle.votes1,@battle.votes2,@battle.votes3]
-        max = arry[0]
-        arry.each do |k|
-            if k > max
-                max = k
-            end
-        end
-        ret = arry.index(max) + 1
-        if @battle.update_attributes(battleID: ret)
-            redirect_to @battle
-        end
+        @battles = Battle.all
     end
 private
     def battle_params

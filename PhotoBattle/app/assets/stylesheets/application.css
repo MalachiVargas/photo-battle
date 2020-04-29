@@ -17,9 +17,17 @@
 
 
 /*--header start here */
+
+.logo-title {
+    padding-left: 30px;
+}
+
+.voting_title {
+    padding-bottom: 50px;
+}
+
 #title {
     color: #cd5c5c;
-    padding-left: 50px;
     font-size: x-large;
     font-weight: bold;
 }
@@ -29,25 +37,29 @@
 /*--header end here */
 
 /*--main container start here-- */
-.section{
-    display: flex;
-}
-#maincontainer{
-    width:100%;
 
-}
+
+
+
 .bodycontainer {
+    display: flex;
+    flex-direction: column;
     align-content: center;
-    padding: 50px 3px 50px 3px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px
 }
+
+
+
+#battle_lobbies {
+    padding: 20px;
+}
+
 #start{
     font-size: x-large;
-    text-align: center;
     color:indianred;
-    align-content: center;
-    padding-right: 350px;
-    padding-left: 350px;
-    padding-top: 8px;
+    padding: 20px;
 }
 .btn-start-battle{
     font-size: x-large;
@@ -66,8 +78,21 @@
     transition: .5s;
 }
 .btn-start-battle:hover{
+    background-color: indianred;
     transform: rotateX(360deg);
     -ms-transform:rotateX(360deg);
     -webkit-transform:rotateX(360deg);
 }
 /*--main container end here-- */
+
+.player_list {
+    display: grid;
+    column-gap: 5em;
+    grid-template-columns: auto auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.links {
+    padding: 20px;
+}

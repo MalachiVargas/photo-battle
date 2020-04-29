@@ -1,25 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class ="bodycontainer" id = maincontainer>
+  
+  
+  <% if @battle.pictures.length < 12 %>
+      <p id="title">PLAYERS</p>
+      <p>(Minimum of four players)</p>
+  
+  <div class ="player_list">
+    <% for i in 1..@battle.pictures.length/3 do %>
+        <p id="title">Player <%=i%> Joined</p>
+    <% end %>
+  </div>
+  <%= render 'form' %>
+  
 
-<p>
-  <strong>Title:</strong>
-  Players:
-</p>
-<p>PLAYERS</p>
-
-
-
-<% for i in 1..@battle.pictures.length/3 do %>
-  <tr>
-    <th>Player<%=i%> Joined</th>
-  </tr>
-<% end %>
-
-
-
-<% if @battle.pictures.length < 12 %>
-<%= render 'form' %>
-<% elsif @battle.battleID == nil %>
-<%= render 'vote' %>
-<% else %>
-<%= render 'result' %>
-<% end %>
+  <% else %>
+   <p id="title" class= "voting_title">VOTE BELOW!</p>
+  <%= render 'vote' %>
+  <% end %>
+</div>

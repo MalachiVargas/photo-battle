@@ -1,0 +1,16 @@
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2em;
+    row-gap: 2em;
+}
+
+.photo-gallery .photogroup {
+    display: grid;
+}
+
+.photo-gallery img {
+    width: 300px;
+    height: 250px;
+}
