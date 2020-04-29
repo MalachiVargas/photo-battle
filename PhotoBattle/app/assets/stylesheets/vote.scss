@@ -14,3 +14,18 @@
     width: 300px;
     height: 250px;
 }
+
+.photo-group {
+    transition: all 0.3s ease 0s;
+    width: auto;
+    height:auto;
+    margin: auto auto;
+    border: box;
+}
+/* change the size of the photo when mouse hover over the photo*/
+.photo-group:hover {
+    transform: scale(1.2); /* photo scale 1.5 times*/
+    position:relative;
+    display:block;
+    z-index:999;
+}

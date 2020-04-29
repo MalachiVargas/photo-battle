@@ -21,7 +21,6 @@ class BattlesController < ApplicationController
     end
     def create
         @battle = Battle.new(battle_params)
-        #@battle.user = current_user
         if @battle.save
             redirect_to @battle
         else
@@ -31,17 +30,22 @@ class BattlesController < ApplicationController
     def update
         @battle = Battle.find(params[:id])
         
-        if battle_params[:votes0]
+        if battle_params[:votes0]  
             @battle.update_attributes(votes0: (@battle.votes0 + 1))
-        elsif battle_params[:votes1]
-            @battle.update_attributes(votes1: (@battle.votes1 + 1))
-        elsif battle_params[:votes2]
-            @battle.update_attributes(votes2: (@battle.votes2 + 1))
-        elsif battle_params[:votes3]
-            @battle.update_attributes(votes3: (@battle.votes3 + 1))
-        else @battle.update_attributes(battle_params)
-            redirect_to @battle
         end
+        if battle_params[:votes1]
+            @battle.update_attributes(votes1: (@battle.votes1 + 1))
+        end
+        if battle_params[:votes2]
+            @battle.update_attributes(votes2: (@battle.votes2 + 1))
+        end
+        if battle_params[:votes3]
+            @battle.update_attributes(votes3: (@battle.votes3 + 1))
+        end
+        
+    
+        redirect_to @battle
+   
     end
     def result
         @battle = Battle.find(params[:id])

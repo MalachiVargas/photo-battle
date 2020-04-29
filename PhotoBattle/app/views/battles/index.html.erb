@@ -9,7 +9,7 @@
         <div id="battle_lobbies">   
             <% @battles.each do |battle| %>
                 <tr>
-                  <td><%= battle.id %></td>
+                  <td>Game ID #: 000<%= battle.id %></td>
                   <td><%= link_to 'Join Game', battle_path(battle), id:"title", class:"links" %></td>
                 </tr>
                 <br>

@@ -88,4 +88,42 @@ label {
     -webkit-box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
     -moz-boz-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
     box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+
+}
+
+.button {
+  background-color: #cd5c5c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+      -webkit-box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+    -moz-boz-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+    box-shadow: -3px 5px 5px -2px rgba(0,0,0,0.25);
+}
+
+
+// Responsive media queries -- Ali
+ /* makes a two column-layout instead of three column */
+    @media screen and (max-width: 900px) {
+        .photo-gallery {
+            width: 50%;
+        }
+    }
+
+    /* makes the two columns stack on top of each other*/
+    @media screen and (max-width: 600px) {
+        .photo-gallery {
+            width: 100%;
+        }
+    } 
+    
+.actions {
+  padding-top: 30px;
 }
